@@ -1,0 +1,80 @@
+{%load static%}
+<style>
+  @font-face {
+    font-family: "Poppins";
+
+    src: url("{% static 'fonts/Poppins/Poppins-Regular.ttf'%}")
+      format("truetype");
+  }
+  html,
+  html * {
+    font-family: "Poppins", sans-serif;
+    font-display: swap;
+  }
+
+  :root {
+    --container-spacing: 1rem;
+    --text-color: #2f3035;
+    --brand-color: #c61b1b;
+  }
+
+  body {
+    color: var(--text-color);
+    background-color:#cfcfcf;
+    overflow-x: hidden;
+    overflow-y: visible;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .container,
+  .container-fluid {
+    background-color:#f0f0f0;
+    width: 100%;
+    height:100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: var(--container-spacing);
+    padding-left: var(--container-spacing);
+  }
+
+  @media (min-width: 576px) {
+    .container {
+      max-width: 510px;
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      max-width: 700px;
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 950px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 1200px;
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .container {
+      max-width: 1450px;
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+</style>
