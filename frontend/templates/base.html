@@ -72,14 +72,44 @@
     </head>
     <body>
         <main class="container">
+        
+        
         <div class="nav">
-            {{menuitems}}
-        </div>
+          <div class="header">
+            <div class="nav-title">
+              <img src="{% static 'images/logo.png'%}" width="80px" height="80px" style="padding:8px;">
+             </div>
+          </div>
+            <input type="checkbox" id="nav-check">
+            
+            <div class="nav-btn">
+              <label for="nav-check">
+                <span></span>
+                <span></span>
+                <span></span>
+              </label>
+            </div>
+            
+            <div class="nav-links">
+
+              
+
+
+            {%for menuitems in  menuitems%}
+                <a href="/{{menuitems.base}}/{{menuitems.url}}" class="active">{{menuitems.name}}</a>
+            {%endfor%}
+
+              
+            </div>
+          </div>
+
         {% block content %}
 
         {% endblock %}
         </main>
 
+
+         
     </body>
 
     </html>

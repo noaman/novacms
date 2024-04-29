@@ -13,14 +13,14 @@
   }
 
   :root {
-    --container-spacing: 1rem;
+    --container-spacing: 20x;
     --text-color: #2f3035;
     --brand-color: #c61b1b;
   }
 
   body {
     color: var(--text-color);
-    background-color:#cfcfcf;
+    background-color:rgba(250, 250, 250, 1);
     overflow-x: hidden;
     overflow-y: visible;
     text-rendering: optimizeLegibility;
@@ -31,13 +31,14 @@
 
   .container,
   .container-fluid {
-    background-color:#f0f0f0;
+    
+    background-color:rgba(255, 255, 255, 1);
     width: 100%;
     height:100%;
     margin-right: auto;
     margin-left: auto;
-    padding-right: var(--container-spacing);
-    padding-left: var(--container-spacing);
+    padding-right: var(--container-spacing) !importatant;
+    padding-left: var(--container-spacing) !importatant;
   }
 
   @media (min-width: 576px) {
@@ -77,4 +78,104 @@
       padding-left: 0;
     }
   }
+
+
+
+.nav {
+  width: 100%;
+  background-color: #ffffff;
+  position: relative;
+  text-align:center;
+}
+
+.nav > .nav-header {
+  display: inline;
+  
+}
+
+.nav > .nav-header > .nav-title {
+  float:left;
+
+  display: inline-block;
+  font-size: 20px;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: inline;
+  
+  font-size: 18px;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.nav > .nav-links > a:hover {
+
+  color: var(--brand-color);
+  font-weight:500;
+  {% comment %} background-color: rgba(0, 0, 0, 0.3); {% endcomment %}
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+@media (max-width:600px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav > .nav-links {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: #ffffff;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    /*height: calc(100vh - 300px);*/
+    height:300px;
+    overflow-y: auto;
+  }
+}
+
+
+
 </style>

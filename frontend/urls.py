@@ -19,8 +19,8 @@ urlpatterns = [
     path("robots.txt",TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),),
     
     
-    # re_path(r'^category/(?P<catslug>[-\w]+)/?$', views.showCategoryLanding,name="categorylanding"),
-    # re_path(r'^category/(?P<catslug>[-\w]+)/(?P<p>\d+)/?$', views.showCategoryLanding,name="categorylanding"),
+    re_path(r'^c/(?P<catslug>[-\w]+)/?$', views.showCategoryLanding,name="categorylanding"),
+    re_path(r'^c/(?P<catslug>[-\w]+)/(?P<p>\d+)/?$', views.showCategoryLanding,name="categorylanding"),
     # re_path(r'^post/(?P<slug>[\w-]+)/?$', views.showPost,name="post"),
     # re_path(r'^(?P<p>\d+)/?$', views.showIndex, name='index'),
     path('',views.showIndex,name="index"),

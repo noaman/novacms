@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load templatefunctions %}
+{% load static %}
+
+
+
+
+{%block content%}
+<div class="flex">
+    <div class="full">
+        
+        {{data.category.name}}
+        <hr>
+        {{data.category.description}}
+        <hr>
+
+        
+
+        {%for blogpost in data.blogposts%}
+        
+        {{blogpost|showCategoryPageProductBlock}}
+        <hr>
+        {%endfor%}
+    </div>
+</div>
+
+
+
+{%endblock%}
